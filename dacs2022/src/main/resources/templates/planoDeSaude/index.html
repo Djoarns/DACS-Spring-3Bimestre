@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    
+    <head th:include="layout :: htmlhead"></head>
+
+    <body>
+        <nav th:replace="layout :: menu">(menu)</nav>
+
+        <div class="container">
+
+            <h1 class="text-center">Planos de Saúde</h1>
+            <a class="btn btn-primary" th:href="@{/planoDeSaude/novo}">Novo</a>
+            <table class="table table table-dark table-striped table-hover" id="planos">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOME</th>
+                        <th>ALTERAR/EXCLUIR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="plano : ${listaPlanos}">
+                        <td th:text="${plano.id}"></td>
+                        <td th:text="${plano.nome}"></td>
+                        <td>
+                            <a class="btn btn-primary" th:href="@{'/planoDeSaude/alterar/'+${plano.id}}">Alterar</a>
+                            
+                            <button class="btn btn-danger js-delete" 
+                                    th:data-id="${plano.id}" >Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    
+        </div>
+        
+        <div th:include="layout :: footer">(footer)</div>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#planos").on('click', '.js-delete', function() {
+                    let button = $(this);
+                    bootbox.confirm("Confirma a exclusão do registro?", function(result) {
+                        if (result) {
+                            $.ajax({
+                                url: '/planoDeSaude/delete/' + button.attr("data-id"),
+                                method: 'GET',
+                                success : function() {
+                                    window.location.href = '/planoDeSaude/';
+                                }
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,100 @@
+# @name loginAPI
+POST http://localhost:8083/api/v1/auth/signin
+Content-Type: application/json
+
+{
+    "usuario":"admin",
+    "senha":"admin"
+}
+
+###
+@token = {{loginAPI.response.body.*}}
+
+###
+GET http://localhost:8083/api/v1/pacientes
+Authorization: Bearer {{token}}
+
+###
+POST http://localhost:8083/api/v1/pacientes
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "nome": "Mario",
+    "sexo": "Masculino",
+    "dataNascimento": "2021-04-14T00:00:00"
+}
+
+###
+POST http://localhost:8083/api/v1/pacientes
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "nome": "Joselita",
+    "sexo": "Feminino",
+    "dataNascimento": "2021-04-14T00:00:00"
+}
+
+###
+GET http://localhost:8083/api/v1/pacientes/nome/ze
+Authorization: Bearer {{token}}
+
+### 
+GET http://localhost:8083/api/v1/pacientes/busca?nome=ze
+Authorization: Bearer {{token}}
+
+###
+PUT http://localhost:8083/api/v1/pacientes/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "nome": "Djonatan zika",
+    "sexo": "Masculino",
+    "dataNascimento": "2022-07-14T00:00:00"
+}
+
+###
+DELETE http://localhost:8083/api/v1/pacientes/3
+Authorization: Bearer {{token}}
+
+###
+GET http://localhost:8083/api/v1/pacientes/1
+Authorization: Bearer {{token}}
+
+###
+GET http://localhost:8083/api/v1/medicos
+Authorization: Bearer {{token}}
+
+###
+POST http://localhost:8083/api/v1/medicos
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "nome":"Djonatan H Arns",
+    "CRM":"99999"
+}
+
+###
+GET http://localhost:8083/api/v1/medicos/1
+Authorization: Bearer {{token}}
+
+###
+GET http://localhost:8083/api/v1/medicos/nome/Lusc
+Authorization: Bearer {{token}}
+
+###
+PUT http://localhost:8083/api/v1/medicos/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "nome":"Djonatan H Arns",
+    "crm":"999"
+}
+
+###
+DELETE http://localhost:8083/api/v1/medicos/1
+Authorization: Bearer {{token}}

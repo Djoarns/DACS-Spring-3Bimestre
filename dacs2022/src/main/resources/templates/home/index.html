@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      
+    <head th:include="layout :: htmlhead"></head>
+
+    <body>
+        <nav th:replace="layout :: menu">(menu)</nav>
+
+        <div class="container">
+            <h1 class="text-center">Home Page</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia ipsum non blandit tempus. Quisque feugiat tortor vel semper posuere. Nulla vel eros sodales, lobortis tellus eu, vestibulum est. Sed non metus eu mi posuere cursus vel non arcu. Cras enim tellus, laoreet sit amet tortor id, mattis maximus nisi. Sed vestibulum pretium purus luctus aliquet. Mauris nec sagittis nisl. Pellentesque vel mauris quis purus convallis elementum. Nullam sodales luctus dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean vulputate leo vel metus tempus, nec vulputate leo consequat.</p>
+            <p>Aliquam laoreet risus sapien, et malesuada est vestibulum ut. Donec ac est iaculis, bibendum velit at, mattis nibh. Mauris cursus fermentum dignissim. Ut nec mi a massa fringilla efficitur. Fusce elementum nisl est, et ultrices erat euismod ac. Quisque posuere metus et vulputate aliquet. Proin sodales est ex, id consectetur sapien tempor eu. Ut dui metus, placerat vestibulum quam sit amet, dapibus sodales urna. Nam quis molestie augue. Mauris ornare blandit purus, vel vulputate metus commodo nec. Quisque lacinia gravida libero, non interdum dolor. Duis id ipsum tempor, sodales magna ut, convallis lectus. Nam gravida quis metus quis tempor. Mauris nisi elit, facilisis vitae eros id, rhoncus egestas sapien. Vestibulum eros ex, imperdiet id volutpat sit amet, ultrices et nisl. Pellentesque ultrices sed ipsum sit amet ultrices.</p>
+            <p>Donec vel pellentesque massa. Donec pretium, quam at scelerisque vestibulum, ante diam condimentum nisl, ut semper neque dolor faucibus turpis. Quisque posuere tellus accumsan lorem sollicitudin imperdiet. Fusce fermentum tortor nec nisl mattis ullamcorper. Morbi volutpat, orci sed vestibulum tristique, arcu massa tincidunt est, in sodales turpis felis sed diam. Duis pretium tristique nibh et posuere. Mauris tortor massa, pharetra at lacinia congue, rhoncus id lectus. Aliquam ultricies lorem a justo sagittis venenatis. Nulla pretium iaculis urna sit amet sagittis. Etiam neque libero, congue sit amet tincidunt sed, pretium ut augue. Sed vehicula efficitur elit. Cras facilisis pellentesque ipsum eu ullamcorper. Integer consectetur ante sollicitudin, ornare est non, egestas massa. Duis consectetur convallis turpis id tempor. Nam nisl neque, consectetur nec nulla at, ultrices gravida nisl. Suspendisse velit erat, hendrerit nec mattis quis, vulputate et lectus.</p>
+            <p>Duis bibendum laoreet aliquet. Pellentesque sagittis ut urna a placerat. Sed non magna rutrum, maximus augue a, mollis enim. Donec magna justo, tempor condimentum nunc vel, pellentesque convallis risus. Morbi ac urna eu massa pharetra vehicula. Praesent pulvinar nisi sit amet lorem gravida ullamcorper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et facilisis diam, ac dictum justo. Sed mattis malesuada massa, a mattis ipsum ultrices non. In nisi mi, viverra in justo sit amet, consectetur congue nibh. Vivamus vitae ex tempus urna mollis viverra ut at neque. Nulla id dignissim nisl, eget vehicula quam.</p>
+        </div>
+        
+        <div th:include="layout :: footer">(footer)</div>
+    </body>
+</html>
